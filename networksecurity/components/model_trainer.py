@@ -31,7 +31,7 @@ from sklearn.ensemble import (
 os.environ["MLFLOW_ENABLE_LOGGED_MODELS"] = "false"
 os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/bikeshinro/networksecurity/mlflow"
 os.environ["MLFLOW_TRACKING_USERNAME"]="bikeshinro"
-os.environ["MLFLOW_TRACKING_PASSWORD"]="pw"
+os.environ["MLFLOW_TRACKING_PASSWORD"]="b27a913b272e42564d8315cb120af19684ccd3e8"
 
 import dagshub
 dagshub.init(repo_owner='bikeshinro', repo_name='networksecurity', mlflow=True)

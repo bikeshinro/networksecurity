@@ -73,7 +73,38 @@ def load_numpy_array_data(file_path: str) -> np.array:
     except Exception as e:
         raise NetworkSecurityException(e, sys) from e
     
+# from sklearn.model_selection import GridSearchCV
+# from sklearn.base import clone
 
+# def evaluate_models(X_train, y_train, X_test, y_test, models: dict, param: dict):
+#     report = {}
+
+#     for model_name, model in models.items():
+#         try:
+#             print(f"Training {model_name}...")
+
+#             # Clone model to avoid contamination
+#             model_clone = clone(model)
+
+#             # Hyperparameter tuning
+#             gs = GridSearchCV(model_clone, param.get(model_name, {}), cv=3, n_jobs=-1)
+#             gs.fit(X_train, y_train)
+
+#             best_model = gs.best_estimator_
+
+#             # Evaluate
+#             y_pred = best_model.predict(X_test)
+#             metrics = get_classification_score(y_test, y_pred)
+
+#             report[model_name] = metrics.f1_score
+
+#             # Replace original model with tuned model
+#             models[model_name] = best_model
+
+#         except Exception as e:
+#             print(f"Error training {model_name}: {e}")
+
+#     return report
 
 def evaluate_models(X_train, y_train,X_test,y_test,models,param):
     try:
